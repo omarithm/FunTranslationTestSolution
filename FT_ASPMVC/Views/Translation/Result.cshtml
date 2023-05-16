@@ -1,0 +1,20 @@
+﻿@model TranslationResponseDisplayModel
+
+<h2>Translation Result</h2>
+
+@if (Model != null)
+{
+    <div class="alert alert-success">
+        <strong>Translated Text:</strong> @Model.TranslatedText
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        Translation failed. Please try again.
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Back to Translation", "Index")
+</p>

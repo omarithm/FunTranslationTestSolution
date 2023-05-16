@@ -1,0 +1,20 @@
+﻿@model TranslationRequestDisplayModel
+
+
+<h2 style="margin-bottom: 25px;">Translate Text</h2>
+
+@using (Html.BeginForm("Translate", "Translation", FormMethod.Post))
+{
+    <div class="form-group">
+        <div style="margin-bottom: 5px;">
+            @Html.LabelFor(model => model.Text, "Type the text you would like to translate")
+        </div>
+        @Html.TextAreaFor(model => model.Text, new { @class = "form-control", rows = "3" })
+        <div class="text-danger" style="font-size: 10pt">
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-top: 10px">Translate</button>
+
+}
